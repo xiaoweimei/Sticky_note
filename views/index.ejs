@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <title>在线小贴士</title>
+  </head>
+  <body>
+    <div id="header">
+		<a href="#" class="add-note" title="添加笔记"><span class="fa fa-plus"></span>添加</a>
+		<ul class="user-area">
+			<% if (isLogin){ %>
+				<li><img src="<%= user.avatar %>" alt=""></li>
+				<li><span title="<%= user.username %>"><%= user.username %></span></li>
+				<li><a class="logout" href="/auth/logout">注销</a></li>
+			<%} else { %>
+				<li><a class="login" title="Github登录" href="/auth/github">Github登录</a></li>
+			<% } %>
+		</ul>
+    </div>
+    <div id="content"></div>
+    <div class="stars"></div>
+    <script src="/js/index.js"></script>
+<!--     <div class="twinkling"></div> -->
+  </body>
+</html>
